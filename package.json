@@ -1,0 +1,36 @@
+{
+  "name": "webappsignatureextension",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Mat Sz <contact@matsz.dev>",
+  "license": "BSD-3-Clause-Clear",
+  "private": true,
+  "scripts": {
+    "build": "ts-node build.ts"
+  },
+  "workspaces": [
+    "contentscript"
+  ],
+  "dependencies": {
+    "@types/cross-spawn": "^6.0.2",
+    "@types/fs-extra": "^9.0.1",
+    "@types/node": "^14.0.23",
+    "colors": "^1.4.0",
+    "cross-spawn": "^7.0.3",
+    "fs-extra": "^9.0.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "ts-node": "^8.10.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  }
+}
